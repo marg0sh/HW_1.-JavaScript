@@ -58,7 +58,7 @@ response:
 {   
     "age": "34",
     "family": {"children": [["Alex", 24], ["Kate", 12]],
-        "u_salary_1_5_year": 200000},
+               "u_salary_1_5_year": 200000},
     "name": "Marg0sh",
     "salary": 50000
 }
@@ -117,7 +117,9 @@ response:
 *ответ*  
 ```json
 {   
-    "person": {"u_age": 34, "u_name": ["Marg0sh", 50000, 34], "u_salary_5_years": 210000.0},
+    "person": {"u_age": 34,
+               "u_name": ["Marg0sh", 50000, 34],
+               "u_salary_5_years": 210000.0},
     "qa_salary_after_1.5_year": 165000.0,
     "qa_salary_after_12_months": 135000.0,
     "qa_salary_after_3.5_years": 190000.0,
