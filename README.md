@@ -279,8 +279,10 @@ PASS Status code is 200
 ```
 This is the first responce from server!
 ```
-
-
+  
+  
+  
+   
 ## (EP2 из HW_1) http://162.55.220.72:5007/user_info_3 <a name="11"></a>
 *Add request  
 метод POST  
@@ -422,90 +424,152 @@ pm.expect(responseData.family.u_salary_1_5_year).to.eql(+requestData.salary*4);
 ```
 PASS u_salary_1_5_year в ответе равно salary*4
 ```  
-
-
-
-
-## (EP_5 bp HW_1) http://162.55.220.72:5007/object_info_3  <a name="12"></a>
-Add request
-метод GET
-в поле "Enter request URL" вписать http://162.55.220.72:5007/object_info_3?name=Marg0sh&age=34&salary=50000 и нажать Save
-
-1. Отправить запрос.
-нажать Send
-
-2. Статус код 200
-перейти в поле Tests
-выбрать из списка справа Status Code is 200
+  
+  
+  
+  
+## (EP_5 из HW_1) http://162.55.220.72:5007/object_info_3  <a name="12"></a>
+*Add request  
+метод GET  
+в поле "Enter request URL" вписать http://162.55.220.72:5007/object_info_3?name=Marg0sh&age=34&salary=50000 и нажать Save*  
+  
+1. Отправить запрос.  
+*нажать Send*
+  
+2. Статус код 200  
+*перейти в поле Tests  
+выбрать из списка справа Status Code is 200*  
+```javascript
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
-Save - Send
-во вкладке Test Results - PASS Status code is 200
-
-3. Спарсить response body в json.
-в окне редактирования тестов код:
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS Status code is 200
+```
+  
+3. Спарсить response body в json.  
+*в окне редактирования тестов код:*  
+```javascript
 let responseData = pm.response.json();
 console.log('Response Data:', responseData)
-Save - Send
-в Console: Response Data: {age: "34", family: {…}, name: "Marg0sh"…}
-
-4. Спарсить request.
-в окне редактирования тестов код:
+```
+*Save - Send  
+в Console:*  
+```
+Response Data: {age: "34", family: {…}, name: "Marg0sh"…}
+```
+  
+4. Спарсить request.  
+*в окне редактирования тестов код:*  
+```javascript
 let requestData = pm.request.url.query.toObject()  
 console.log('Request Data:', requestData);
-Save - Send
-в Console: Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
-
-5. Проверить, что name в ответе равно name s request (name забрать из request.)
-из списка справа выбрать Response body: JSON value check
-в окне редактирования тестов оставить код:
+```
+*Save - Send  
+в Console: *  
+```
+Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
+```
+  
+5. Проверить, что name в ответе равно name s request (name забрать из request.)  
+*из списка справа выбрать Response body: JSON value check*  
+*в окне редактирования тестов оставить код:*  
+```javascript
 pm.test("name в запросе равен name в ответе", function () {
     pm.expect(responseData.name).to.eql(requestData.name)
 });
-во вкладке Test Results - PASS name в запросе равен name в ответе
-
-6. Проверить, что age в ответе равно age s request (age забрать из request.)
-в окне редактирования тестов оставить код:
+```
+*во вкладке Test Results*  
+```
+PASS name в запросе равен name в ответе
+```
+  
+6. Проверить, что age в ответе равно age s request (age забрать из request.)  
+*в окне редактирования тестов оставить код:*  
+```javascript
 pm.test("age в запросе равен age в ответе", function () {
     pm.expect(responseData.age).to.eql(requestData.age)
 });
-во вкладке Test Results - PASS age в запросе равен age в ответе
-
-7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
-в окне редактирования тестов оставить код:
-pm.test("salary в запросе равен salary в ответе", function () {
+```
+*во вкладке Test Results*  
+```
+PASS age в запросе равен age в ответе
+```
+  
+7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)  
+*в окне редактирования тестов оставить код:*
+```javascript
+m.test("salary в запросе равен salary в ответе", function () {
     pm.expect(responseData.salary).to.eql(Number(requestData.salary))
 });
-во вкладке Test Results - PASS salary в запросе равен salary в ответе
-
-8. Вывести в консоль параметр family из response.
-в окне редактирования тестов оставить код:
+```
+*во вкладке Test Results*
+```
+PASS salary в запросе равен salary в ответе
+```
+  
+8. Вывести в консоль параметр family из response.  
+*в окне редактирования тестов оставить код:*
+```javascript
 console.log('Family: ', responseData.family)
-в Console: Family: {children: [2], pets: {…}, u_salary_1_5_year: 200000}
-
-9. Проверить, что у параметра dog есть параметры name.
-в окне редактирования тестов оставить код:
+```
+*в Console:*  
+```
+Family: {children: [2], pets: {…}, u_salary_1_5_year: 200000}
+```
+  
+9. Проверить, что у параметра dog есть параметры name.  
+*в окне редактирования тестов оставить код:*
+```javascript
 pm.test("у параметра dog есть параметры name", function () {  
     pm.expect(responseData.family.pets.dog).to.haveOwnProperty('name');   
 });
-во вкладке Test Results - PASS у параметра dog есть параметры name
+```
+*во вкладке Test Results*  
+```
+PASS у параметра dog есть параметры name
+```
 
-10. Проверить, что у параметра dog есть параметры age.
+10. Проверить, что у параметра dog есть параметры age.  
+*в окне редактирования тестов оставить код:*
+```javascript
 pm.test("у параметра dog есть параметры age", function () {  
     pm.expect(responseData.family.pets.dog).to.haveOwnProperty('age');   
 });
-во вкладке Test Results - PASS у параметра dog есть параметры age
-
+```
+*во вкладке Test Results*  
+```
+PASS у параметра dog есть параметры age
+```
+  
 11. Проверить, что параметр name имеет значение Luky.
-
-
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test("параметр name имеет значение Luky", function () {
+    pm.expect(responseData.family.pets.dog.name).to.eql('Luky')
+});
+```
+*во вкладке Test Results*  
+```
+PASS параметр name имеет значение Luky
+```
 12. Проверить, что параметр age имеет значение 4.
-
-
-
-
-
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test("параметр age имеет значение 4", function () {
+    pm.expect(responseData.family.pets.dog.age).to.eql(4)
+});
+```
+*во вкладке Test Results*  
+```
+PASS параметр age имеет значение 4
+```
+  
+  
+  
 ## http://162.55.220.72:5005/object_info_4  <a name="13"></a>
 1. Отправить запрос.
 2. Статус код 200
