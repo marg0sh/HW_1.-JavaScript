@@ -311,7 +311,7 @@ PASS Status code is 200
 в окне редактирования тестов оставить код:*  
 ```javascript
 let responseData = pm.response.json();  
-console.log(responseDate);
+console.log(responseData);
 ```
 *Проверить содержимое переменной, выводя ее в Console:*  
 ```
@@ -738,27 +738,62 @@ PASS 2-й элемент параметра salary равен salary*3 из requ
 ```
   
 15. Создать в окружении переменную name
-
+*в меню слева выбирать Environment - New Environment - Marg0sh_HW2 
+В строку Variable внести название переменной name, *  
+  
 16. Создать в окружении переменную age
-
+*в меню слева выбирать Environment - New Environment - Age  
+В строку Variable внести название переменной age*  
+  
 17. Создать в окружении переменную salary
-
-18. Передать в окружение переменную name
-
-19. Передать в окружение переменную age
-
-20. Передать в окружение переменную salary
-
-21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
-
-
+*в меню слева выбирать Environment - New Environment - Salary  
+В строку Variable внести название переменной salary*  
+  
+?18. Передать в окружение переменную name
+*вернуться в коллекции, в EP_6 object_info_4, во вкладку Tests, прописать код:*  
+```javascript
+pm.environment.set('Name', responseData.name);
+```
+  
+?19. Передать в окружение переменную age  
+*прописать код:*  
+```javascript
+pm.environment.set('Age', responseData.age);
+```
+  
+?20. Передать в окружение переменную salary  
+*прописать код:*  
+```javascript
+pm.environment.set('Salary', responseData.salary);
+```
+  
+?21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.  
+*прописать код:*  
+```javascript
+for (let i of responseData.salary) {  
+console.log('элементы списка из параметра salary:',i);  
+	}
+```
+*Save - Send  
+в Console: *  
+```
+элементы списка из параметра salary: 50000
+ 
+элементы списка из параметра salary: "100000"
+ 
+элементы списка из параметра salary: "150000"
+```
 
 
 
 
 ## (EP_7 из HW_1) http://162.55.220.72:5005/user_info_2  <a name="14"></a>
+*Add request  
+метод POST 
+в поле "Enter request URL" вписать http://162.55.220.72:5007/user_info_2 и нажать Save*  
+  
+1. Вставить параметр salary из окружения в request  
 
-1. Вставить параметр salary из окружения в request
 
 2. Вставить параметр age из окружения в age
 
