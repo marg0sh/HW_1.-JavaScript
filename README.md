@@ -570,53 +570,235 @@ PASS параметр age имеет значение 4
   
   
   
-## http://162.55.220.72:5005/object_info_4  <a name="13"></a>
-1. Отправить запрос.
-2. Статус код 200
-3. Спарсить response body в json.
+  
+## (EP_6 из HW_1) http://162.55.220.72:5005/object_info_4  <a name="13"></a>
+*Add request  
+метод GET  
+в поле "Enter request URL" вписать http://162.55.220.72:5007/object_info_4?name=Marg0sh&age=34&salary=50000 и нажать Save*  
+  
+1. Отправить запрос.  
+*нажать Send*
+  
+2. Статус код 200  
+*перейти в поле Tests  
+выбрать из списка справа Status Code is 200*  
+```javascript
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS Status code is 200
+```
+  
+3. Спарсить response body в json.  
+*в окне редактирования тестов оставить код:*
+```javascript
+let responseData = pm.response.json();
+console.log ('Response Data', responseData)
+```
+*Save - Send  
+в Console: *  
+```
+Response Data {age: 34, name: "Marg0sh", salary: [3]}
+```
+  
 4. Спарсить request.
+*в окне редактирования тестов оставить код:*
+```javascript
+let requestData = pm.request.url.query.toObject();
+console.log ('Request Data', requestData)
+```
+*Save - Send  
+в Console: *  
+```
+Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
+```
+  
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test("name в ответе равно name в request ", function () {
+    pm.expect(responseData.name).to.eql(requestData.name)
+});
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS name в ответе равно name в request
+```
+  
 6. Проверить, что age в ответе равно age из request (age забрать из request.)
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test("age в ответе равно age из request ", function () {
+    pm.expect(responseData.age).to.eql(Number(requestData.age))
+});
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS age в ответе равно age из request 
+```
+  
 7. Вывести в консоль параметр salary из request.
+*в окне редактирования тестов оставить код:*
+```javascript
+console.log(requestData.salary)
+```
+*Save - Send  
+в Console: *  
+```
+50000
+```
+  
 8. Вывести в консоль параметр salary из response.
+*в окне редактирования тестов оставить код:*
+```javascript
+console.log(responseData.salary)
+```
+*Save - Send  
+в Console: *  
+```
+(3) [50000, "100000", "150000"]
+```
+  
 9. Вывести в консоль 0-й элемент параметра salary из response.
+*в окне редактирования тестов оставить код:*
+```javascript
+console.log(responseData.salary[0])
+```
+*Save - Send  
+в Console: *  
+```
+50000
+```
+  
 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.
+*в окне редактирования тестов оставить код:*
+```javascript
+console.log(responseData.salary[1])
+```
+*Save - Send  
+в Console: *  
+```
+"100000"
+```
+  
 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
+*в окне редактирования тестов оставить код:*
+```javascript
+console.log(responseData.salary[2])
+```
+*Save - Send  
+в Console: *  
+```
+"150000"
+```
+  
 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test("0-й элемент параметра salary равен salary из request ", function () {
+    pm.expect(responseData.salary[0]).to.eql(Number(requestData.salary))
+});
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS 0-й элемент параметра salary равен salary из request
+```
+  
 13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test(" 1-й элемент параметра salary равен salary*2 из request ", function () {
+    pm.expect(+responseData.salary[1]).to.eql(requestData.salary*2)
+});
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS 1-й элемент параметра salary равен salary*2 из request
+```
+  
 14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
+*в окне редактирования тестов оставить код:*
+```javascript
+pm.test("2-й элемент параметра salary равен salary*3 из request ", function () {
+    pm.expect(+responseData.salary[2]).to.eql(requestData.salary*3)
+});
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
+PASS 2-й элемент параметра salary равен salary*3 из request
+```
+  
 15. Создать в окружении переменную name
+
 16. Создать в окружении переменную age
+
 17. Создать в окружении переменную salary
+
 18. Передать в окружение переменную name
+
 19. Передать в окружение переменную age
+
 20. Передать в окружение переменную salary
+
 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
 
 
 
 
 
-## http://162.55.220.72:5005/user_info_2  <a name="14"></a>
+
+## (EP_7 из HW_1) http://162.55.220.72:5005/user_info_2  <a name="14"></a>
+
 1. Вставить параметр salary из окружения в request
+
 2. Вставить параметр age из окружения в age
+
 3. Вставить параметр name из окружения в name
+
 4. Отправить запрос.
+
 5. Статус код 200
+
 6. Спарсить response body в json.
+
 7. Спарсить request.
+
 8. Проверить, что json response имеет параметр start_qa_salary
+
 9. Проверить, что json response имеет параметр qa_salary_after_6_months
+
 10. Проверить, что json response имеет параметр qa_salary_after_12_months
+
 11. Проверить, что json response имеет параметр qa_salary_after_1.5_year
+
 12. Проверить, что json response имеет параметр qa_salary_after_3.5_years
+
 13. Проверить, что json response имеет параметр person
+
 14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)
+
 15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)
+
 16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)
+
 17. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request.)
+
 18. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request.)
+
 19. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)
+
 20. Проверить, что что параметр u_age равен age из request (age забрать из request.)
+
 21. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request.)
+
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
+
