@@ -739,35 +739,35 @@ PASS 2-й элемент параметра salary равен salary*3 из requ
   
 15. Создать в окружении переменную name
 *в меню слева выбирать Environment - New Environment - Marg0sh_HW2 
-В строку Variable внести название переменной name, *  
+В строку Variable внести название переменной name, в Current value - Marg0sh *  
   
 16. Создать в окружении переменную age
-*в меню слева выбирать Environment - New Environment - Age  
-В строку Variable внести название переменной age*  
+*в меню слева выбирать Environment - Marg0sh_HW2  
+В строку Variable внести название переменной age, в Current value - 34 *  
   
 17. Создать в окружении переменную salary
-*в меню слева выбирать Environment - New Environment - Salary  
-В строку Variable внести название переменной salary*  
+*в меню слева выбирать Environment - Marg0sh_HW2   
+В строку Variable внести название переменной salary, в Current value - 50000*  
   
-?18. Передать в окружение переменную name
+18. Передать в окружение переменную name
 *вернуться в коллекции, в EP_6 object_info_4, во вкладку Tests, прописать код:*  
 ```javascript
 pm.environment.set('Name', responseData.name);
 ```
   
-?19. Передать в окружение переменную age  
+19. Передать в окружение переменную age  
 *прописать код:*  
 ```javascript
 pm.environment.set('Age', responseData.age);
 ```
   
-?20. Передать в окружение переменную salary  
+20. Передать в окружение переменную salary  
 *прописать код:*  
 ```javascript
 pm.environment.set('Salary', responseData.salary);
 ```
   
-?21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.  
+21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.  
 *прописать код:*  
 ```javascript
 for (let i of responseData.salary) {  
