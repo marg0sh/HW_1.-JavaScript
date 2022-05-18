@@ -793,36 +793,81 @@ console.log('элементы списка из параметра salary:',i);
 в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_2 и нажать Save*  
   
 1. Вставить параметр salary из окружения в request  
+  
+2. Вставить параметр age из окружения в age
+  
+3. Вставить параметр name из окружения в name
+  
+4. Отправить запрос.
+  
+5. Статус код 200  
 ```javascript
-pm.environment.get('Salary')
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+```
+  
+6. Спарсить response body в json.  
+```javascript
+let responseData = pm.response.json();
+console.log ('Response Data', responseData)
+```
+  
+7. Спарсить request.  
+```javascript
+let requestData = request.data
+console.log ('Request Data', requestData)
 ```
 
-2. Вставить параметр age из окружения в age
-
-3. Вставить параметр name из окружения в name
-
-4. Отправить запрос.
-
-5. Статус код 200
-
-6. Спарсить response body в json.
-
-7. Спарсить request.
-
-8. Проверить, что json response имеет параметр start_qa_salary
-
-9. Проверить, что json response имеет параметр qa_salary_after_6_months
-
-10. Проверить, что json response имеет параметр qa_salary_after_12_months
-
-11. Проверить, что json response имеет параметр qa_salary_after_1.5_year
-
-12. Проверить, что json response имеет параметр qa_salary_after_3.5_years
-
-13. Проверить, что json response имеет параметр person
-
-14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)
-
+8. Проверить, что json response имеет параметр start_qa_salary  
+```javascript
+pm.test("json response имеет параметр start_qa_salary", function () {  
+    pm.expect(responseData).to.haveOwnProperty('start_qa_salary');   
+});
+```
+  
+9. Проверить, что json response имеет параметр qa_salary_after_6_months  
+```javascript
+pm.test("json response имеет параметр qa_salary_after_6_months", function () {  
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_6_months');   
+});
+```
+  
+10. Проверить, что json response имеет параметр qa_salary_after_12_months  
+```javascript
+pm.test("json response имеет параметр qa_salary_after_12_months", function () {  
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_12_months');   
+});
+```
+  
+11. Проверить, что json response имеет параметр qa_salary_after_1.5_year  
+```javascript
+pm.test("json response имеет параметр qa_salary_after_1.5_year", function () {  
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_1.5_year');   
+});
+```
+  
+12. Проверить, что json response имеет параметр qa_salary_after_3.5_years  
+```javascript
+pm.test("json response имеет параметр qa_salary_after_3.5_years", function () {  
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_3.5_years');   
+});
+ ```
+  
+13. Проверить, что json response имеет параметр person  
+```javascript
+pm.test("json response имеет параметр person", function () {  
+    pm.expect(responseData).to.haveOwnProperty('person');   
+});
+```
+  
+14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)  
+```javascript
+pm.test("параметр start_qa_salary равен salary из request", function () {
+    pm.expect(responseData.start_qa_salary).to.eql(requestData.Salary)
+});
+```
+  
 15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)
 
 16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)
