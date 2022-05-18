@@ -283,7 +283,7 @@ This is the first responce from server!
   
   
    
-## (EP2 из HW_1) http://162.55.220.72:5007/user_info_3 <a name="11"></a>
+## (EP2 из HW_1) http://162.55.220.72:5005/user_info_3 <a name="11"></a>
 *Add request  
 метод POST  
 в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_3 и нажать Save*  
@@ -428,10 +428,10 @@ PASS u_salary_1_5_year в ответе равно salary*4
   
   
   
-## (EP_5 из HW_1) http://162.55.220.72:5007/object_info_3  <a name="12"></a>
+## (EP_5 из HW_1) http://162.55.220.72:5005/object_info_3  <a name="12"></a>
 *Add request  
 метод GET  
-в поле "Enter request URL" вписать http://162.55.220.72:5007/object_info_3?name=Marg0sh&age=34&salary=50000 и нажать Save*  
+в поле "Enter request URL" вписать http://162.55.220.72:5005/object_info_3?name=Marg0sh&age=34&salary=50000 и нажать Save*  
   
 1. Отправить запрос.  
 *нажать Send*
@@ -574,7 +574,7 @@ PASS параметр age имеет значение 4
 ## (EP_6 из HW_1) http://162.55.220.72:5005/object_info_4  <a name="13"></a>
 *Add request  
 метод GET  
-в поле "Enter request URL" вписать http://162.55.220.72:5007/object_info_4?name=Marg0sh&age=34&salary=50000 и нажать Save*  
+в поле "Enter request URL" вписать http://162.55.220.72:5005/object_info_4?name=Marg0sh&age=34&salary=50000 и нажать Save*  
   
 1. Отправить запрос.  
 *нажать Send*
@@ -790,7 +790,7 @@ console.log('элементы списка из параметра salary:',i);
 ## (EP_7 из HW_1) http://162.55.220.72:5005/user_info_2  <a name="14"></a>
 *Add request  
 метод POST 
-в поле "Enter request URL" вписать http://162.55.220.72:5007/user_info_2 и нажать Save*  
+в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_2 и нажать Save*  
   
 1. Вставить параметр salary из окружения в request  
 
