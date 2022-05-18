@@ -764,7 +764,7 @@ pm.environment.set('Age', responseData.age);
 20. Передать в окружение переменную salary  
 *прописать код:*  
 ```javascript
-pm.environment.set('Salary', responseData.salary);
+pm.environment.set('Salary', responseData.salary[0]);
 ```
   
 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.  
@@ -793,7 +793,9 @@ console.log('элементы списка из параметра salary:',i);
 в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_2 и нажать Save*  
   
 1. Вставить параметр salary из окружения в request  
-
+```javascript
+pm.environment.get('Salary')
+```
 
 2. Вставить параметр age из окружения в age
 
