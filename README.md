@@ -793,16 +793,16 @@ console.log('элементы списка из параметра salary:',i);
 в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_2 и нажать Save*  
   
 1. Вставить параметр salary из окружения в request  
-*перейти во вкладку Body - from-data в столбце Value напротив 'salary' написать {{Salary}}*
+*перейти во вкладку Body - from-data в столбце Value напротив 'salary' написать {{Salary}}*  
   
-2. Вставить параметр age из окружения в age
-*в столбце Value напротив 'age' написать {{Age}}*
+2. Вставить параметр age из окружения в age  
+*в столбце Value напротив 'age' написать {{Age}}*  
   
-3. Вставить параметр name из окружения в name
-*в столбце Value напротив 'name' написать {{Name}}*
+3. Вставить параметр name из окружения в name  
+*в столбце Value напротив 'name' написать {{Name}}*  
   
-4. Отправить запрос.
-*Save - Send*
+4. Отправить запрос.  
+*Save - Send*  
   
 5. Статус код 200  
 *перейти во вкладку Tests, в окне редактирования тестов оставить код:*  
@@ -851,7 +851,6 @@ pm.test("json response имеет параметр start_qa_salary", function ()
 ```
 PASS json response имеет параметр start_qa_salary
 ```
-
   
 9. Проверить, что json response имеет параметр qa_salary_after_6_months    
 *в окне редактирования тестов оставить код:*  
@@ -865,7 +864,6 @@ pm.test("json response имеет параметр qa_salary_after_6_months", fu
 ```
 PASS json response имеет параметр qa_salary_after_6_months
 ```
-
   
 10. Проверить, что json response имеет параметр qa_salary_after_12_months    
 *в окне редактирования тестов оставить код:*  
@@ -879,7 +877,6 @@ pm.test("json response имеет параметр qa_salary_after_12_months", f
 ```
 PASS json response имеет параметр qa_salary_after_12_months
 ```
-
   
 11. Проверить, что json response имеет параметр qa_salary_after_1.5_year    
 *в окне редактирования тестов оставить код:*  
@@ -893,7 +890,6 @@ pm.test("json response имеет параметр qa_salary_after_1.5_year", fu
 ```
 PASS json response имеет параметр qa_salary_after_1.5_year
 ```
-
   
 12. Проверить, что json response имеет параметр qa_salary_after_3.5_years    
 *в окне редактирования тестов оставить код:*  
@@ -907,7 +903,6 @@ pm.test("json response имеет параметр qa_salary_after_3.5_years", f
 ```
 PASS json response имеет параметр qa_salary_after_3.5_years
 ```
-
   
 13. Проверить, что json response имеет параметр person    
 *в окне редактирования тестов оставить код:*  
@@ -934,7 +929,6 @@ pm.test("параметр start_qa_salary равен salary из request", funct
 ```
 PASS параметр start_qa_salary равен salary из request
 ```
-
   
 15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)  
 *в окне редактирования тестов оставить код:*  
@@ -948,6 +942,7 @@ pm.test("параметр qa_salary_after_6_months равен salary*2 из requ
 ```
 PASS параметр qa_salary_after_6_months равен salary*2 из request
 ```
+  
 16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)    
 *в окне редактирования тестов оставить код:*  
 ```javascript
@@ -960,7 +955,6 @@ pm.test("параметр qa_salary_after_12_months равен salary*2.7 из r
 ```
 PASS параметр qa_salary_after_12_months равен salary*2.7 из request
 ```
-
   
 17. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request.)  
 *в окне редактирования тестов оставить код:*  
@@ -974,7 +968,6 @@ pm.test("параметр qa_salary_after_1.5_year равен salary*3.3 из re
 ```
 PASS параметр qa_salary_after_1.5_year равен salary*3.3 из request
 ```
-
   
 18. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request.)  
 *в окне редактирования тестов оставить код:*  
@@ -988,7 +981,6 @@ pm.test("параметр qa_salary_after_3.5_years равен salary*3.8 из r
 ```
 PASS параметр qa_salary_after_3.5_years равен salary*3.8 из request
 ```
-
   
 19. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)  
 *в окне редактирования тестов оставить код:*  
@@ -1002,7 +994,6 @@ pm.test("параметре person, 1-й элемент из u_name равен s
 ```
 PASS параметре person, 1-й элемент из u_name равен salary из request
 ```
-
   
 20. Проверить, что что параметр u_age равен age из request (age забрать из request.)  
 *в окне редактирования тестов оставить код:*  
@@ -1016,7 +1007,6 @@ pm.test("параметр u_age равен age из request", function () {
 ```
 PASS параметр u_age равен age из request
 ```
-
   
 21. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request.)  
 *в окне редактирования тестов оставить код:*  
