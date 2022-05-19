@@ -1175,8 +1175,18 @@ pm.test("параметр u_salary_5_years равен salary*4.2 из request", 
 PASS параметр u_salary_5_years равен salary*4.2 из request
 ```
   
-  
+   
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.  
   
-*в окне редактирования тестов оставить код:*  
-  
+*в окне редактирования тестов оставить код:*   
+```javascript
+for (let i in responseData.person) {  
+console.log('элементы списка из параметра person:',i);  
+	}
+```
+*в Console*  
+```
+элементы списка из параметра person: u_age
+элементы списка из параметра person: u_name
+элементы списка из параметра person: u_salary_5_years
+```
