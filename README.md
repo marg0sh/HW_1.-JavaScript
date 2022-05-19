@@ -298,8 +298,16 @@ PASS Status code is 200
 ```
 This is the first responce from server!
 ```
-  
-  
+*в поле ввода кода тестов:*  
+```javascriptpm.test("в body приходит правильный string", function () {
+    pm.response.to.have.body("This is the first responce from server!");
+});  
+```
+*Save - Send  
+во вкладке Test Results*  
+```
+PASS в body приходит правильный string
+```
   
   
 ## (EP2 из HW_1) http://162.55.220.72:5005/user_info_3 <a name="11"></a>
