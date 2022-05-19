@@ -13,9 +13,9 @@
 [EP_5 /object_info_3](#12)  
 [EP_6 /object_info_4](#13)  
 [EP_7 /user_info_2](#14)  
-
-
-
+  
+  
+  
 <a name="1"></a>
 ## HW_1 Работа в Postman
 #### Создать запросы в Postman.  
@@ -28,6 +28,8 @@ Port: 5005
   
 *в поле "Enter request URL" вписать http://162.55.220.72:5005/ и нажать Save*  
   
+    
+    
 -----
 ## EP_1  <a name="2"></a>
 Method: GET  
@@ -53,6 +55,8 @@ response:
 ```
   
 *в поле "Enter request URL" будет отображаться URL http://162.55.220.72:5005/get_method?name=Marg0sh&age=34*  
+  
+  
   
 -----
   
@@ -85,6 +89,8 @@ response:
   
 *в поле "Enter request URL" URL не изменяется*  
   
+  
+  
 -----
   
 ## EP_3  <a name="4"></a>
@@ -114,6 +120,8 @@ response:
 ```
   
 *в поле "Enter request URL" будет отображаться URL http://162.55.220.72:5005/object_info_1?name=Marg0sh&age=34&weight=70*  
+  
+  
   
 -----
   
@@ -149,6 +157,8 @@ response:
   
 *в поле "Enter request URL" будет отображаться URL http://162.55.220.72:5005/object_info_2?name=Marg0sh&age=34&salary=50000*  
   
+  
+  
 -----
 ## EP_5  <a name="6"></a>
 Method: GET  
@@ -181,6 +191,8 @@ response:
    
 *в поле "Enter request URL" будет отображаться URL http://162.55.220.72:5005/object_info_3?name=Marg0sh&age=34&salary=50000*  
   
+  
+  
 -----
   
 ## EP_6  <a name="7"></a>
@@ -209,6 +221,8 @@ response:
 ```
    
 *в поле "Enter request URL" будет отображаться URL http://162.55.220.72:5005/object_info_4?name=Marg0sh&age=34&salary=50000*  
+  
+  
   
 -----
   
@@ -243,6 +257,8 @@ response:
 ```
   
 *в поле "Enter request URL" URL не изменяется*  
+  
+  
   
 =====
 
@@ -285,16 +301,18 @@ This is the first responce from server!
   
   
   
-   
+  
 ## (EP2 из HW_1) http://162.55.220.72:5005/user_info_3 <a name="11"></a>
   
 *Add request  
 метод POST  
 в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_3 и нажать Save*  
   
+  
 1. Отправить запрос.  
   
 *нажать Send*  
+  
   
 2. Статус код 200  
   
@@ -312,6 +330,7 @@ pm.test("Status code is 200", function () {
 PASS Status code is 200
 ```
   
+  
 3. Спарсить response body в json.  
   
 *из списка справа выбрать Response body: JSON value check  
@@ -324,6 +343,7 @@ console.log(responseData);
 ```
 {age: "34", family: {…}, name: "Marg0sh"…}
 ```
+  
   
 4. Проверить, что name в ответе равно name s request (name вбить руками.)  
   
@@ -339,6 +359,7 @@ pm.test("name в запросе равен name в ответе", function () {
 PASS name в запросе равен name в ответе
 ```
   
+  
 5. Проверить, что age в ответе равно age s request (age вбить руками.)  
   
 *в окне редактирования тестов код:*  
@@ -351,6 +372,7 @@ pm.test("age в запросе равен age в ответе", function () {
 ```
 PASS age в запросе равен age в ответе
 ```
+  
   
 6. Проверить, что salary в ответе равно salary s request (salary вбить руками.)  
   
@@ -365,6 +387,7 @@ pm.test("salary в запросе равен salary в ответе", function (
 PASS salary в запросе равен salary в ответе
 ```
   
+  
 7. Спарсить request.  
   
 *в окне редактирования тестов код:*  
@@ -377,6 +400,7 @@ console.log('request data:', requestData);
 ```
 request data: {name: "Marg0sh", age: "34", salary: "50000"}
 ```
+  
   
 8. Проверить, что name в ответе равно name s request (name забрать из request.)  
   
@@ -391,6 +415,7 @@ pm.expect(responseData.name).to.eql(requestData.name);
 PASS значения name в ответе и в запросе совпадают
 ```
   
+  
 9. Проверить, что age в ответе равно age s request (age забрать из request.)  
   
 *в окне редактирования тестов код:*  
@@ -403,6 +428,7 @@ pm.expect(responseData.age).to.eql(requestData.age);
 ```
 PASS значения age в ответе и в запросе совпадают
 ```
+  
   
 10. Проверить, что salary в ответе равно salary s request (salary забрать из request.)  
   
@@ -417,6 +443,7 @@ pm.expect(responseData.salary).to.eql(Number(requestData.salary));
 PASS значения salary в ответе и в запросе совпадают
 ```
   
+  
 11. Вывести в консоль параметр family из response.  
   
 *в окне редактирования тестов код:*  
@@ -427,6 +454,7 @@ console.log('Family: ', responseDate.family)
 ```
 Family: {children: [2], u_salary_1_5_year: 200000}
 ```
+  
   
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)  
   
@@ -450,9 +478,11 @@ PASS u_salary_1_5_year в ответе равно salary*4
 метод GET  
 в поле "Enter request URL" вписать http://162.55.220.72:5005/object_info_3?name=Marg0sh&age=34&salary=50000 и нажать Save*  
   
+  
 1. Отправить запрос.  
   
 *нажать Send*
+  
   
 2. Статус код 200  
   
@@ -469,6 +499,7 @@ pm.test("Status code is 200", function () {
 PASS Status code is 200
 ```
   
+  
 3. Спарсить response body в json.  
   
 *в окне редактирования тестов код:*  
@@ -482,6 +513,7 @@ console.log('Response Data:', responseData)
 Response Data: {age: "34", family: {…}, name: "Marg0sh"…}
 ```
   
+  
 4. Спарсить request.  
   
 *в окне редактирования тестов код:*  
@@ -494,6 +526,7 @@ console.log('Request Data:', requestData);
 ```
 Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
 ```
+  
   
 5. Проверить, что name в ответе равно name s request (name забрать из request.)  
   
@@ -509,6 +542,7 @@ pm.test("name в запросе равен name в ответе", function () {
 PASS name в запросе равен name в ответе
 ```
   
+  
 6. Проверить, что age в ответе равно age s request (age забрать из request.)  
   
 *в окне редактирования тестов оставить код:*  
@@ -521,6 +555,7 @@ pm.test("age в запросе равен age в ответе", function () {
 ```
 PASS age в запросе равен age в ответе
 ```
+  
   
 7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)  
   
@@ -535,6 +570,7 @@ m.test("salary в запросе равен salary в ответе", function ()
 PASS salary в запросе равен salary в ответе
 ```
   
+  
 8. Вывести в консоль параметр family из response.  
   
 *в окне редактирования тестов оставить код:*
@@ -545,6 +581,7 @@ console.log('Family: ', responseData.family)
 ```
 Family: {children: [2], pets: {…}, u_salary_1_5_year: 200000}
 ```
+  
   
 9. Проверить, что у параметра dog есть параметры name.  
   
@@ -559,6 +596,7 @@ pm.test("у параметра dog есть параметры name", function (
 PASS у параметра dog есть параметры name
 ```
 
+
 10. Проверить, что у параметра dog есть параметры age.  
   
 *в окне редактирования тестов оставить код:*
@@ -571,6 +609,7 @@ pm.test("у параметра dog есть параметры age", function ()
 ```
 PASS у параметра dog есть параметры age
 ```
+  
   
 11. Проверить, что параметр name имеет значение Luky.
   
@@ -606,9 +645,11 @@ PASS параметр age имеет значение 4
 метод GET  
 в поле "Enter request URL" вписать http://162.55.220.72:5005/object_info_4?name=Marg0sh&age=34&salary=50000 и нажать Save*  
   
+  
 1. Отправить запрос.  
   
 *нажать Send*
+  
   
 2. Статус код 200  
   
@@ -625,6 +666,7 @@ pm.test("Status code is 200", function () {
 PASS Status code is 200
 ```
   
+  
 3. Спарсить response body в json.  
   
 *в окне редактирования тестов оставить код:*
@@ -638,6 +680,7 @@ console.log ('Response Data', responseData)
 Response Data {age: 34, name: "Marg0sh", salary: [3]}
 ```
   
+  
 4. Спарсить request.
   
 *в окне редактирования тестов оставить код:*
@@ -650,6 +693,7 @@ console.log ('Request Data', requestData)
 ```
 Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
 ```
+  
   
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
   
@@ -665,6 +709,7 @@ pm.test("name в ответе равно name в request ", function () {
 PASS name в ответе равно name в request
 ```
   
+  
 6. Проверить, что age в ответе равно age из request (age забрать из request.)
   
 *в окне редактирования тестов оставить код:*
@@ -679,6 +724,7 @@ pm.test("age в ответе равно age из request ", function () {
 PASS age в ответе равно age из request 
 ```
   
+  
 7. Вывести в консоль параметр salary из request.
   
 *в окне редактирования тестов оставить код:*
@@ -690,6 +736,7 @@ console.log(requestData.salary)
 ```
 50000
 ```
+  
   
 8. Вывести в консоль параметр salary из response.
   
@@ -703,6 +750,7 @@ console.log(responseData.salary)
 (3) [50000, "100000", "150000"]
 ```
   
+  
 9. Вывести в консоль 0-й элемент параметра salary из response.
   
 *в окне редактирования тестов оставить код:*
@@ -714,6 +762,7 @@ console.log(responseData.salary[0])
 ```
 50000
 ```
+  
   
 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.
   
@@ -727,6 +776,7 @@ console.log(responseData.salary[1])
 "100000"
 ```
   
+  
 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
   
 *в окне редактирования тестов оставить код:*
@@ -738,6 +788,7 @@ console.log(responseData.salary[2])
 ```
 "150000"
 ```
+  
   
 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
   
@@ -753,6 +804,7 @@ pm.test("0-й элемент параметра salary равен salary из re
 PASS 0-й элемент параметра salary равен salary из request
 ```
   
+  
 13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)
   
 *в окне редактирования тестов оставить код:*
@@ -766,6 +818,7 @@ pm.test(" 1-й элемент параметра salary равен salary*2 из
 ```
 PASS 1-й элемент параметра salary равен salary*2 из request
 ```
+  
   
 14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
   
@@ -781,20 +834,24 @@ pm.test("2-й элемент параметра salary равен salary*3 из 
 PASS 2-й элемент параметра salary равен salary*3 из request
 ```
   
+  
 15. Создать в окружении переменную name
   
 *в меню слева выбирать Environment - New Environment - Marg0sh_HW2 
 В строку Variable внести название переменной name, в Current value - Marg0sh *  
+  
   
 16. Создать в окружении переменную age
   
 *в меню слева выбирать Environment - Marg0sh_HW2  
 В строку Variable внести название переменной age, в Current value - 34 *  
   
+  
 17. Создать в окружении переменную salary
   
 *в меню слева выбирать Environment - Marg0sh_HW2   
 В строку Variable внести название переменной salary, в Current value - 50000*  
+  
   
 18. Передать в окружение переменную name
   
@@ -803,6 +860,7 @@ PASS 2-й элемент параметра salary равен salary*3 из requ
 pm.environment.set('Name', responseData.name);
 ```
   
+  
 19. Передать в окружение переменную age  
   
 *прописать код:*  
@@ -810,12 +868,14 @@ pm.environment.set('Name', responseData.name);
 pm.environment.set('Age', responseData.age);
 ```
   
+  
 20. Передать в окружение переменную salary  
   
 *прописать код:*  
 ```javascript
 pm.environment.set('Salary', responseData.salary[0]);
 ```
+  
   
 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.  
   
@@ -844,21 +904,26 @@ console.log('элементы списка из параметра salary:',i);
 метод POST 
 в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_2 и нажать Save*  
   
+  
 1. Вставить параметр salary из окружения в request  
   
 *перейти во вкладку Body - from-data в столбце Value напротив 'salary' написать {{Salary}}*  
+  
   
 2. Вставить параметр age из окружения в age  
   
 *в столбце Value напротив 'age' написать {{Age}}*  
   
+  
 3. Вставить параметр name из окружения в name  
   
 *в столбце Value напротив 'name' написать {{Name}}*  
   
+  
 4. Отправить запрос.  
   
 *Save - Send*  
+  
   
 5. Статус код 200  
   
@@ -874,6 +939,7 @@ pm.test("Status code is 200", function () {
 PASS Status code is 200
 ```
   
+  
 6. Спарсить response body в json.  
   
 *в окне редактирования тестов оставить код:*  
@@ -886,6 +952,7 @@ console.log ('Response Data', responseData)
 Response Data {person: {…}, qa_salary_after_1.5_year: 165000, qa_salary_after_12_months: 135000…}
 ```
   
+  
 7. Спарсить request.  
   
 *в окне редактирования тестов оставить код:*    
@@ -897,6 +964,7 @@ console.log ('Request Data', requestData)
 ```
 Request Data {name: "Marg0sh", age: "34", salary: "50000"}
 ```
+  
   
 8. Проверить, что json response имеет параметр start_qa_salary    
   
@@ -912,6 +980,7 @@ pm.test("json response имеет параметр start_qa_salary", function ()
 PASS json response имеет параметр start_qa_salary
 ```
   
+  
 9. Проверить, что json response имеет параметр qa_salary_after_6_months    
   
 *в окне редактирования тестов оставить код:*  
@@ -925,6 +994,7 @@ pm.test("json response имеет параметр qa_salary_after_6_months", fu
 ```
 PASS json response имеет параметр qa_salary_after_6_months
 ```
+  
   
 10. Проверить, что json response имеет параметр qa_salary_after_12_months    
   
@@ -940,6 +1010,7 @@ pm.test("json response имеет параметр qa_salary_after_12_months", f
 PASS json response имеет параметр qa_salary_after_12_months
 ```
   
+  
 11. Проверить, что json response имеет параметр qa_salary_after_1.5_year    
   
 *в окне редактирования тестов оставить код:*  
@@ -953,6 +1024,7 @@ pm.test("json response имеет параметр qa_salary_after_1.5_year", fu
 ```
 PASS json response имеет параметр qa_salary_after_1.5_year
 ```
+  
   
 12. Проверить, что json response имеет параметр qa_salary_after_3.5_years    
   
@@ -968,6 +1040,7 @@ pm.test("json response имеет параметр qa_salary_after_3.5_years", f
 PASS json response имеет параметр qa_salary_after_3.5_years
 ```
   
+  
 13. Проверить, что json response имеет параметр person    
   
 *в окне редактирования тестов оставить код:*  
@@ -981,6 +1054,7 @@ pm.test("json response имеет параметр person", function () {
 ```
 PASS json response имеет параметр person
 ```
+  
   
 14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)    
   
@@ -996,6 +1070,7 @@ pm.test("параметр start_qa_salary равен salary из request", funct
 PASS параметр start_qa_salary равен salary из request
 ```
   
+  
 15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)  
   
 *в окне редактирования тестов оставить код:*  
@@ -1009,6 +1084,7 @@ pm.test("параметр qa_salary_after_6_months равен salary*2 из requ
 ```
 PASS параметр qa_salary_after_6_months равен salary*2 из request
 ```
+  
   
 16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)    
   
@@ -1024,6 +1100,7 @@ pm.test("параметр qa_salary_after_12_months равен salary*2.7 из r
 PASS параметр qa_salary_after_12_months равен salary*2.7 из request
 ```
   
+  
 17. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request.)  
   
 *в окне редактирования тестов оставить код:*  
@@ -1037,6 +1114,7 @@ pm.test("параметр qa_salary_after_1.5_year равен salary*3.3 из re
 ```
 PASS параметр qa_salary_after_1.5_year равен salary*3.3 из request
 ```
+  
   
 18. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request.)  
   
@@ -1052,6 +1130,7 @@ pm.test("параметр qa_salary_after_3.5_years равен salary*3.8 из r
 PASS параметр qa_salary_after_3.5_years равен salary*3.8 из request
 ```
   
+  
 19. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)  
   
 *в окне редактирования тестов оставить код:*  
@@ -1065,6 +1144,7 @@ pm.test("параметре person, 1-й элемент из u_name равен s
 ```
 PASS параметре person, 1-й элемент из u_name равен salary из request
 ```
+  
   
 20. Проверить, что что параметр u_age равен age из request (age забрать из request.)  
   
@@ -1080,6 +1160,7 @@ pm.test("параметр u_age равен age из request", function () {
 PASS параметр u_age равен age из request
 ```
   
+  
 21. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request.)  
   
 *в окне редактирования тестов оставить код:*  
@@ -1093,7 +1174,8 @@ pm.test("параметр u_salary_5_years равен salary*4.2 из request", 
 ```
 PASS параметр u_salary_5_years равен salary*4.2 из request
 ```
-
+  
+  
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.  
   
 *в окне редактирования тестов оставить код:*  
