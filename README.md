@@ -470,7 +470,7 @@ Family: {children: [2], u_salary_1_5_year: 200000}
 *в окне редактирования тестов код:*  
 ```javascript
 pm.test("u_salary_1_5_year в ответе равно salary*4", function () {  
-pm.expect(responseData.family.u_salary_1_5_year).to.eql(+requestData.salary*4);   
+pm.expect(responseData.family.u_salary_1_5_year).to.eql(requestData.salary*4);   
 });  
 ```
 *во вкладке Test Results*
