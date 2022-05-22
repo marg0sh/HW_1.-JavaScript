@@ -1341,8 +1341,37 @@ http://162.55.220.72:5005/user_info_2
 *12. Проверить, что json response имеет параметр qa_salary_after_3.5_years*  
 *13. Проверить, что json response имеет параметр person*  
   
+let arr = []
+const resp = pm.response.json()
+
+for(const key in resp){
+    arr.push(key)
+}
+console.log(arr)
+
+(6):
+0: "person"
+1: "qa_salary_after_1.5_year"
+2: "qa_salary_after_12_months"
+3: "qa_salary_after_3.5_years"
+4: "qa_salary_after_6_months"
+5: "start_qa_salary"
+
+arr.forEach((element) => {
+    pm.test(`Response has a ${element}`, function(){
+        pm.expect(resp).to.have.property(element)
+    })
+})
+
+PASS Response has a person
+PASS Response has a qa_salary_after_1.5_year
+PASS Response has a qa_salary_after_12_months
+PASS Response has a qa_salary_after_3.5_years
+PASS Response has a qa_salary_after_6_months
+PASS Response has a start_qa_salary
+
   
-3) ** Преобразовать задания 14 - 18 (проверить что параметр равен salary умножить на коэффициент) таким образом, чтобы все проверки делались в цикле (1 проверка в цикле, в которую попадают нужные параметры). Название теста должно видоизменяться исходя из подаваемых данных. ( ${}  или другим способом)  
+2) ** Преобразовать задания 14 - 18 (проверить что параметр равен salary умножить на коэффициент) таким образом, чтобы все проверки делались в цикле (1 проверка в цикле, в которую попадают нужные параметры). Название теста должно видоизменяться исходя из подаваемых данных. ( ${}  или другим способом)  
   
 *14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)*  
 *15. Проверить, что параметр qa_salary_after_6_months равен salary * 2 из request (salary забрать из request.)*  
@@ -1350,7 +1379,70 @@ http://162.55.220.72:5005/user_info_2
 *17. Проверить, что параметр qa_salary_after_1.5_year равен salary * 3.3 из request (salary забрать из request.)*  
 *18. Проверить, что параметр qa_salary_after_3.5_years равен salary * 3.8 из request (salary забрать из request.)*  
   
+
+let arr = []
+const resp = pm.response.json()
+
+for(const key in resp){
+    arr.push(key)
+}
+
+const count = [
+    '',
+    3.3,
+    2.7,
+    3.8,
+    2,
+    1
+]
+
+arr.forEach((element, i) => {
+    if (element !=='person') {
+    pm.test(`Response_has_a ${element}`, function(){
+        pm.expect(+resp[element]).to.eql(50000*count[i])
+    })}
+})
+
+PASS Response_has_a qa_salary_after_1.5_year
+PASS Response_has_a qa_salary_after_12_months
+PASS Response_has_a qa_salary_after_3.5_years
+PASS Response_has_a qa_salary_after_6_months
+PASS Response_has_a start_qa_salary
   
-5) *** Преобразовать описанные выше задания 1 и 2 для данного эндпоинта в ОДИН ЦИКЛ, в котором будут проходить ОБА теста.  
+3) *** Преобразовать описанные выше задания 1 и 2 для данного эндпоинта в ОДИН ЦИКЛ, в котором будут проходить ОБА теста.  
   
-  
+let arr = []
+const resp = pm.response.json()
+const salary = 50000
+
+const counters = {
+    'person': '',
+    'start_qa_salary': 1,
+    'qa_salary_after_6_months': 2,
+    'qa_salary_after_12_months': 2.7,
+    'qa_salary_after_1.5_year': 3.3,
+    'qa_salary_after_3.5_years': 3.8
+}
+
+for (const key in counters){
+    pm.test(`Response_Has_ ${key}`, () =>{
+        pm.expect(resp).to.have.property(key)
+    })
+    if (key !== 'person'){
+        pm.test(`${key} = ${salary} * ${counters[key]}`, () =>{
+        pm.expect(resp[key]).to.eql(counters[key]*salary)
+    })
+    }
+}
+
+PASS Response_Has_ person
+PASS Response_Has_ start_qa_salary
+PASS start_qa_salary = 50000 * 1
+PASS Response_Has_ qa_salary_after_6_months
+PASS qa_salary_after_6_months = 50000 * 2
+PASS Response_Has_ qa_salary_after_12_months
+PASS qa_salary_after_12_months = 50000 * 2.7
+PASS Response_Has_ qa_salary_after_1.5_year
+PASS qa_salary_after_1.5_year = 50000 * 3.3
+PASS Response_Has_ qa_salary_after_3.5_years
+PASS qa_salary_after_3.5_years = 50000 * 3.8
