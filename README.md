@@ -847,7 +847,7 @@ PASS 2-й элемент параметра salary равен salary*3 из requ
 15. Создать в окружении переменную name
   
 *в меню слева выбирать Environment - New Environment - Marg0sh_HW2 
-В строку Variable внести название переменной name, в Current value - Marg0sh *  
+В строку Variable внести название переменной name, в Current value - Marg0sh*  
   
   
 16. Создать в окружении переменную age
