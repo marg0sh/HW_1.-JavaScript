@@ -1313,7 +1313,7 @@ const reqObj ={
 }
 
 const respObj = {}
-for (key in reqObj){
+for (const key in reqObj){
     if(!isNaN(pm.response.json()[key])){
         respObj[key] = +pm.response.json()[key]
     }else
