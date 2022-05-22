@@ -684,7 +684,7 @@ let responseData = pm.response.json();
 console.log ('Response Data', responseData)
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 Response Data {age: 34, name: "Marg0sh", salary: [3]}
 ```
@@ -698,7 +698,7 @@ let requestData = pm.request.url.query.toObject();
 console.log ('Request Data', requestData)
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
 ```
@@ -741,7 +741,7 @@ PASS age в ответе равно age из request
 console.log(requestData.salary)
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 50000
 ```
@@ -754,7 +754,7 @@ console.log(requestData.salary)
 console.log(responseData.salary)
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 (3) [50000, "100000", "150000"]
 ```
