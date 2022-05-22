@@ -531,7 +531,7 @@ let requestData = pm.request.url.query.toObject()
 console.log('Request Data:', requestData);
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 Request Data: {name: "Marg0sh", age: "34", salary: "50000"}
 ```
@@ -767,7 +767,7 @@ console.log(responseData.salary)
 console.log(responseData.salary[0])
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 50000
 ```
@@ -780,7 +780,7 @@ console.log(responseData.salary[0])
 console.log(responseData.salary[1])
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 "100000"
 ```
@@ -793,7 +793,7 @@ console.log(responseData.salary[1])
 console.log(responseData.salary[2])
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 "150000"
 ```
@@ -895,7 +895,7 @@ console.log('элементы списка из параметра salary:',i);
 	}
 ```
 *Save - Send  
-в Console: *  
+в Console:*  
 ```
 элементы списка из параметра salary: 50000
  
