@@ -1231,7 +1231,7 @@ P.S. ЗАДАНИЕ НЕ ПОДРАЗУМЕВАЕТ, ЧТО ЭНДПОИНТ Р�
 http://162.55.220.72:5007/object_info_4  
 Преобразовать пункты 12-13-14 (salary из реквеста и респонса равны) таким образом, чтобы проверка производилась циклом, в котором будет всего ОДИН тест. Имя теста должно меняться в зависимости от значения в Salary.    
   
-```yavascript
+```javascript
 let reqSal = pm.request.url.query.get('salary')
 let respSal = pm.response.json().salary
 
@@ -1243,7 +1243,7 @@ for(let i = 0; i <= respSal.length-1; i++){
 }
 ```
 *или*  
-```yavascript
+```javascript
 respSal.forEach((element, i) =>{
     pm.test(`Request salary ${reqSal} *${i+1} == response salary ${element}}}`, function(){
         pm.expect(+reqSal*(i+1)).to.eql(+element)
@@ -1262,7 +1262,7 @@ PASS Request salary 50000 *3 == response salary 150000
 http://162.55.220.72:5005/object_info_3  
 Преобразовать задания 5-7 (сравнить идентичные поля в реквесте и респонсе) таким образом, чтобы это делалось ЗА ОДИН ТЕСТ (сразу все 3 поля) БЕЗ ЦИКЛОВ! (глубокое сравнение объектов).  
   
-```yavascript
+```javascript
 let reqSal = +pm.request.url.query.get('salary')
 let reqName = pm.request.url.query.get('name')
 let reqAge = +pm.request.url.query.get('age')
@@ -1293,7 +1293,7 @@ pm.test('RespObj == ReqObj', function(){
 })
 ```
 *или*   
-```yavascript
+```javascript
 let reqSal = +pm.request.url.query.get('salary')
 let reqName = pm.request.url.query.get('name')
 let reqAge = +pm.request.url.query.get('age')
