@@ -1345,10 +1345,10 @@ http://162.55.220.72:5005/user_info_2
 3) ** Преобразовать задания 14 - 18 (проверить что параметр равен salary умножить на коэффициент) таким образом, чтобы все проверки делались в цикле (1 проверка в цикле, в которую попадают нужные параметры). Название теста должно видоизменяться исходя из подаваемых данных. ( ${}  или другим способом)  
   
 *14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)*  
-*15. Проверить, что параметр qa_salary_after_6_months равен salary *2 из request (salary забрать из request.)*  
-*16. Проверить, что параметр qa_salary_after_12_months равен salary *2.7 из request (salary забрать из request.)*  
-*17. Проверить, что параметр qa_salary_after_1.5_year равен salary *3.3 из request (salary забрать из request.)*  
-*18. Проверить, что параметр qa_salary_after_3.5_years равен salary *3.8 из request (salary забрать из request.)*  
+*15. Проверить, что параметр qa_salary_after_6_months равен salary * 2 из request (salary забрать из request.)*  
+*16. Проверить, что параметр qa_salary_after_12_months равен salary * 2.7 из request (salary забрать из request.)*  
+*17. Проверить, что параметр qa_salary_after_1.5_year равен salary * 3.3 из request (salary забрать из request.)*  
+*18. Проверить, что параметр qa_salary_after_3.5_years равен salary * 3.8 из request (salary забрать из request.)*  
   
   
 5) *** Преобразовать описанные выше задания 1 и 2 для данного эндпоинта в ОДИН ЦИКЛ, в котором будут проходить ОБА теста.  
