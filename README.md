@@ -1341,6 +1341,7 @@ http://162.55.220.72:5005/user_info_2
 *12. Проверить, что json response имеет параметр qa_salary_after_3.5_years*  
 *13. Проверить, что json response имеет параметр person*  
   
+```javascript
 let arr = []
 const resp = pm.response.json()
 
@@ -1348,7 +1349,9 @@ for(const key in resp){
     arr.push(key)
 }
 console.log(arr)
-
+```
+*в Console:*  
+```
 (6):
 0: "person"
 1: "qa_salary_after_1.5_year"
@@ -1356,20 +1359,25 @@ console.log(arr)
 3: "qa_salary_after_3.5_years"
 4: "qa_salary_after_6_months"
 5: "start_qa_salary"
-
+```
+*в поле кода:*  
+```javascript
 arr.forEach((element) => {
     pm.test(`Response has a ${element}`, function(){
         pm.expect(resp).to.have.property(element)
     })
 })
-
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
 PASS Response has a person
 PASS Response has a qa_salary_after_1.5_year
 PASS Response has a qa_salary_after_12_months
 PASS Response has a qa_salary_after_3.5_years
 PASS Response has a qa_salary_after_6_months
 PASS Response has a start_qa_salary
-
+```
   
 2) ** Преобразовать задания 14 - 18 (проверить что параметр равен salary умножить на коэффициент) таким образом, чтобы все проверки делались в цикле (1 проверка в цикле, в которую попадают нужные параметры). Название теста должно видоизменяться исходя из подаваемых данных. ( ${}  или другим способом)  
   
@@ -1379,7 +1387,7 @@ PASS Response has a start_qa_salary
 *17. Проверить, что параметр qa_salary_after_1.5_year равен salary * 3.3 из request (salary забрать из request.)*  
 *18. Проверить, что параметр qa_salary_after_3.5_years равен salary * 3.8 из request (salary забрать из request.)*  
   
-
+```javascript
 let arr = []
 const resp = pm.response.json()
 
@@ -1402,15 +1410,20 @@ arr.forEach((element, i) => {
         pm.expect(+resp[element]).to.eql(50000*count[i])
     })}
 })
-
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
 PASS Response_has_a qa_salary_after_1.5_year
 PASS Response_has_a qa_salary_after_12_months
 PASS Response_has_a qa_salary_after_3.5_years
 PASS Response_has_a qa_salary_after_6_months
 PASS Response_has_a start_qa_salary
-  
+```
+   
 3) *** Преобразовать описанные выше задания 1 и 2 для данного эндпоинта в ОДИН ЦИКЛ, в котором будут проходить ОБА теста.  
   
+```javascript
 let arr = []
 const resp = pm.response.json()
 const salary = 50000
@@ -1434,7 +1447,10 @@ for (const key in counters){
     })
     }
 }
-
+```
+*Save - Send*  
+*во вкладке Test Results*  
+```
 PASS Response_Has_ person
 PASS Response_Has_ start_qa_salary
 PASS start_qa_salary = 50000 * 1
@@ -1446,3 +1462,5 @@ PASS Response_Has_ qa_salary_after_1.5_year
 PASS qa_salary_after_1.5_year = 50000 * 3.3
 PASS Response_Has_ qa_salary_after_3.5_years
 PASS qa_salary_after_3.5_years = 50000 * 3.8
+```
+  
