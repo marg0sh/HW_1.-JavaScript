@@ -58,7 +58,7 @@ request url params:
   
 response:  
 *ответ*  
-```
+```json
 [
     "Marg0sh",
     "34"
