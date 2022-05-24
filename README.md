@@ -7,7 +7,7 @@
 [EP_6 /object_info_4](#7)  
 [EP_7 /user_info_2](#8)  
   
-  -----
+-----
   
 ## [HW_2 Postman](#9)  
 [EP /first](#10)  
@@ -16,7 +16,7 @@
 [EP_6 /object_info_4](#13)  
 [EP_7 /user_info_2](#14)  
   
-  -----
+-----
   
 ## [HW_2* Postman](#15)  
 [EP_7 /user_info_2](#16)  
