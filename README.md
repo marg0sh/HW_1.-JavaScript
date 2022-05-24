@@ -39,8 +39,8 @@ Port: 5005
   
 *в поле "Enter request URL" вписать http://162.55.220.72:5005/ и нажать Save*  
   
-    
-    
+  
+  
 -----
 ## EP_1  <a name="2"></a>
 Method: GET  
