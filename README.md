@@ -68,7 +68,6 @@ response:
 *в поле "Enter request URL" будет отображаться URL http://162.55.220.72:5005/get_method?name=Marg0sh&age=34*  
   
   
-  
 -----
   
 ## EP_2  <a name="3"></a>
