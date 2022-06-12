@@ -1,4 +1,4 @@
-## [HW_1 Работа в Postman](#1)  
+## [HW_1 Работа в Postman](#1)    
 [EP_1 /get_method](#2)  
 [EP_2 /user_info_3](#3)  
 [EP_3 /object_info_1](#4)  
