@@ -242,7 +242,7 @@ EndPoint: /user_info_2
 request form data:  
  name: str  
  age: int  
- salary: int  
+ salary: int    
   
 *В коллекции Marg0sh создать "New Request" и переименовать его в "EP7"*  
 *1. Выбрать метод Post, в поле "Enter request URL" вписать http://162.55.220.72:5005/user_info_2*  
