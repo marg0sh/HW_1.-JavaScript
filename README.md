@@ -309,7 +309,8 @@ PASS Status code is 200
 This is the first responce from server!
 ```
 *в поле ввода кода тестов:*  
-```javascriptpm.test("в body приходит правильный string", function () {
+```javascript
+    pm.test("в body приходит правильный string", function () {
     pm.response.to.have.body("This is the first responce from server!");
 });  
 ```
